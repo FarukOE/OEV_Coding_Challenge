@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
@@ -6,8 +6,10 @@ import Button from 'react-bootstrap/Button';
 
 import config from '../../config/Config.json'
 import Product from "./Product"
+import {Context} from '../../App'
 
 const ProductList: React.FC = () => {
+    const {dispatch} = useContext(Context)
     const [allProducts, setProducts] = useState<Product[]>([])
 
     useEffect(() => {
@@ -22,8 +24,9 @@ const ProductList: React.FC = () => {
             })
     }, [])
 
-    function addToShoppingCart(): React.MouseEventHandler<HTMLButtonElement> | undefined {
-        console.log("test")
+    function addToShoppingCart(product: Product): void {
+        console.log("test", product)
+
         return 
     }
 
@@ -46,7 +49,7 @@ const ProductList: React.FC = () => {
                             </Button>
                         </div>
                         <div>
-                            <Button variant="secondary" onClick={addToShoppingCart()}>Add to list</Button>
+                            <Button variant="secondary" onClick={() => addToShoppingCart(product)}>Add to list</Button>
                         </div>
                     </Card>
                 ))}

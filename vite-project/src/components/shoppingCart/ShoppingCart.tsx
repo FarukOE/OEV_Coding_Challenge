@@ -3,7 +3,7 @@ import React from "react";
 const ShoppingCart: React.FC = () => {
 
     return (
-        null
+        <p>hello</p>
     )
 }
 
