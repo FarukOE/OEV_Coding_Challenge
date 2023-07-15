@@ -1,0 +1,8 @@
+{
+    "dummyJson": {
+        "url": "https://dummyjson.com/",
+        "endpoints": {
+            "product": "products"
+        }
+    }
+}
