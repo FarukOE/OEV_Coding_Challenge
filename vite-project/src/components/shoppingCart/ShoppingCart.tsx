@@ -1,10 +1,7 @@
-import React from "react";
+import Product from "../productList/Product"
 
-const ShoppingCart: React.FC = () => {
-
-    return (
-        <p>hello</p>
-    )
+export default interface ShoppingCart {
+    cart: Product[],
+    shoppingPrice: number,
+    shippingPrice: number
 }
-
-export default ShoppingCart
